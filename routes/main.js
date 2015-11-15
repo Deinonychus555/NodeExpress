@@ -1,0 +1,62 @@
+var express = require('express');
+var router = express.Router();
+var app = express();
+//var bodyParser = require('body-parser');
+
+//router.use(bodyParser.urlencoded({extended: true}));
+
+
+router.use(function (req, res, next) {
+
+	app.locals.count = (app.locals.count || 0);
+	app.locals.count += 1;
+	
+	console.log("Visitas: " + app.locals.count);	
+	next();
+	
+});
+
+/* GET home page. */
+router.get('/', function(req, res) {
+  res.render('main', {count: app.locals.count, nombre: "Mr. Anónimo"});
+	
+});
+
+
+router.get('/registrar', function(req, res, next) {
+
+  	
+	
+});
+
+
+
+router.get('/:nombre([a-zA-Z]+)', function(req, res, next) {
+
+		eval("app.locals." + req.params.nombre + "= (app.locals." + req.params.nombre + " || 0)");
+		eval("app.locals." + req.params.nombre + " += 1");
+		
+		if (req.query.registrado === undefined) {
+		res.send("Debes loguearte");
+		}	
+		else if (req.params.nombre === "error") {
+			next('route')		
+		} else if (req.params.nombre === "Juan") {
+			next()
+		} else {res.render('main', {count: eval("app.locals." + req.params.nombre), nombre: req.params.nombre})}
+	},
+	function(req, res) {
+
+		res.render('main', {count: eval("app.locals." + req.params.nombre), nombre: "tocayo"})
+});
+
+router.get('/*', function(req, res) {
+    
+    //res.type("text/plain");
+    //res.status(400);
+    //res.send("Error: la página a la que intenta acceder no existe")
+    res.send("<html><head><title>Error</title></head><body><h1>Página inexistente</h1><p>La ruta no existe</p></body></html>")
+});
+
+
+module.exports = router;

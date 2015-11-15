@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title><h1>Login</h1></title>
+	</head>
+
+	<body>
+		
+		<form method="get" name="formulario1" id="f1" action="/login/identificar">
+			<fieldset>
+				<legend>Login</legend>
+				<label for="usuarioLog">Usuario:</label>
+				<input type="text" id="usuario" name="usuarioLog"/>
+				<br></br>
+				<label for="passLog">Password:</label>
+				<input type="password" id="pass" name="passLog"/>
+				<br></br>
+				<input type="submit" value="Enviar">
+			</fieldset>	
+			
+		</form>
+		<br></br>
+		<form method="post" name="formulario2" id="f2" action="/login/registrar">
+			<fieldset>
+				<legend>Registrarse</legend>
+				<label for="usuarioReg">Usuario:</label>
+				<input type="text" id="usuario2" name="usuarioReg"/>
+				<br></br>
+				<label for="passReg">Password:</label>
+				<input type="password" id="pass2" name="passReg"/>
+				<br></br>
+				<input type="submit" value="Enviar">
+			</fieldset>	
+			
+		</form>
+	
+	
+	</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title><h1>Inicio</h1></title>
+	</head>
+
+	<body>
+		<h3>Bienvenido <%= nombre %><h3>
+		<br></br>
+		<p>localhost:3000/inicio/nombre_que_quieras<p>
+	
+	
+	</body>
+</html>

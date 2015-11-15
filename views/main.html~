@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title><h1>Inicio</h1></title>
+	</head>
+
+	<body>
+		<h3>Bienvenido <%= nombre %></h3>
+		<br></br>
+		<p>Número de visitas <%= count %></p>
+		<form method="post" name="formulario1" id="f1" action="/proc">
+			<fieldset>
+				<legend>Login</legend>
+				<label for="usuario">Usuario:</label>
+				<input type="text" id="usuario" name="usuario"/>
+				<label for="pass">Password:</label>
+				<input type="password" id="pass" name="passs"/>
+				<input type="submit">Enviar
+			</fieldset>	
+		</form>
+	
+	
+	</body>
+</html>
